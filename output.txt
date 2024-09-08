@@ -1,0 +1,71 @@
+Query 1:
+?- monster(annihilape, ghost).
+true.
+
+Query 2:
+?- move(Move, fighting).
+Move = lowKick ;
+Move = closeCombat.
+
+Query 3:
+?- move(Move, normal).
+Move = bodySlam ;
+Move = quickAttack ;
+Move = megakick ;
+Move = tackle ;
+Move = takeDown.
+
+Query 4:
+?- monsterMove(Monster, bodySlam).
+Monster = annihilape ;
+Monster = lechonk ;
+Monster = mabosstiff.
+
+Query 5:
+?- monsterMove(Monster, lowKick).
+Monster = annihilape ;
+Monster = espathra ;
+Monster = flamingo.
+
+Query 6:
+?- typeEffectiveness(strong, Move, MonsterType).
+Move = psychic,
+MonsterType = fighting ;
+Move = fighting,
+MonsterType = dark ;
+Move = fighting,
+MonsterType = normal ;
+Move = dark,
+MonsterType = psychic ;
+Move = dark,
+MonsterType = ghost ;
+Move = ghost,
+MonsterType = psychic ;
+Move = MonsterType, MonsterType = ghost.
+
+Query 7:
+?- moreEffectiveThan(strong, superweak).
+true.
+
+Query 8:
+?-  monsterMoveMatch(fighting, annihilape, espathra, lowKick).
+true ;
+
+Query 9:
+?- monsterMoveMatch(fighting, flamingo, lenhonk, lowKick).
+false.
+
+Query 10:
+?- monsterMoveMatch(normal, annihilape, lechonk, bodySlam).
+true 
+
+
+Extra
+?- moreEffectiveMoveType(lowkick, bodySlam, dark).
+false.
+
+?- moreEffectiveMove(annihilape, shadowPunch, flamingo, lowKick).
+true 
+
+
+
